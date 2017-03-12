@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Java Basic Syntax</title>
+<meta name="description" content="Java Basic Syntax - Learn Java in simple and easy steps starting from basic to advanced concepts with examples including Java Syntax Object Oriented Language, Methods, Overriding, Inheritance, Polymorphism, Interfaces, Packages, Collections, Networking, Multithreading, Generics, Multimedia, Serialization, GUI." />
+<meta name="keywords" content="Java, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Inheritance, Polymorphism, Interfaces, Packages, Collections, Networking, Multithreading, Generics, Multimedia, Serialization, GUI." />
+<base href="https://www.tutorialspoint.com/" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="robots" content="index, follow"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="/theme/js/script-min-v4.js"></script>
+<link rel="stylesheet" href="/theme/css/style-min.css?v=2">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(java/images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #eb4847 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #eb4847 !important;}
+.submenu-item{ border-bottom: 2px solid #eb4847 !important; border-top: 2px solid #eb4847 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="/images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="/java/images/logo.png">
+      </a>
+      </h1>			
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a href="http://www.sendfiles.net"><i class="fa fa-send"></i> &nbsp;SENDFiles</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+         <!-- search code here  --> 
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+   </div>
+  
+   <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="tutor_connect/index.php"><i class="fa-user"> </i> Tutor Connect</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+         <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+         
+      </div>
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="/java/images/java-mini-logo.jpg" alt="Java Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Tutorial</li>
+<li><a href="/java/index.htm">Java - Home</a></li>
+<li><a href="/java/java_overview.htm">Java - Overview</a></li>
+<li><a href="/java/java_environment_setup.htm">Java - Environment Setup</a></li>
+<li><a href="/java/java_basic_syntax.htm">Java - Basic Syntax</a></li>
+<li><a href="/java/java_object_classes.htm">Java - Object &amp; Classes</a></li>
+<li><a href="/java/java_basic_datatypes.htm">Java - Basic Datatypes</a></li>
+<li><a href="/java/java_variable_types.htm">Java - Variable Types</a></li>
+<li><a href="/java/java_modifier_types.htm">Java - Modifier Types</a></li>
+<li><a href="/java/java_basic_operators.htm">Java - Basic Operators</a></li>
+<li><a href="/java/java_loop_control.htm">Java - Loop Control</a></li>
+<li><a href="/java/java_decision_making.htm">Java - Decision Making</a></li>
+<li><a href="/java/java_numbers.htm">Java - Numbers</a></li>
+<li><a href="/java/java_characters.htm">Java - Characters</a></li>
+<li><a href="/java/java_strings.htm">Java - Strings</a></li>
+<li><a href="/java/java_arrays.htm">Java - Arrays</a></li>
+<li><a href="/java/java_date_time.htm">Java - Date &amp; Time</a></li>
+<li><a href="/java/java_regular_expressions.htm">Java - Regular Expressions</a></li>
+<li><a href="/java/java_methods.htm">Java - Methods</a></li>
+<li><a href="/java/java_files_io.htm">Java - Files and I/O</a></li>
+<li><a href="/java/java_exceptions.htm">Java - Exceptions</a></li>
+<li><a href="/java/java_innerclasses.htm">Java - Inner classes</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Object Oriented</li>
+<li><a href="/java/java_inheritance.htm">Java - Inheritance</a></li>
+<li><a href="/java/java_overriding.htm">Java - Overriding</a></li>
+<li><a href="/java/java_polymorphism.htm">Java - Polymorphism</a></li>
+<li><a href="/java/java_abstraction.htm">Java - Abstraction</a></li>
+<li><a href="/java/java_encapsulation.htm">Java - Encapsulation</a></li>
+<li><a href="/java/java_interfaces.htm">Java - Interfaces</a></li>
+<li><a href="/java/java_packages.htm">Java - Packages</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Advanced</li>
+<li><a href="/java/java_data_structures.htm">Java - Data Structures</a></li>
+<li><a href="/java/java_collections.htm">Java - Collections</a></li>
+<li><a href="/java/java_generics.htm">Java - Generics</a></li>
+<li><a href="/java/java_serialization.htm">Java - Serialization</a></li>
+<li><a href="/java/java_networking.htm">Java - Networking</a></li>
+<li><a href="/java/java_sending_email.htm">Java - Sending Email</a></li>
+<li><a href="/java/java_multithreading.htm">Java - Multithreading</a></li>
+<li><a href="/java/java_applet_basics.htm">Java - Applet Basics</a></li>
+<li><a href="/java/java_documentation.htm">Java - Documentation</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">Java Useful Resources</li>
+<li><a href="/java/java_questions_answers.htm">Java - Questions and Answers</a></li>
+<li><a href="/java/java_quick_guide.htm">Java - Quick Guide</a></li>
+<li><a href="/java/java_useful_resources.htm">Java - Useful Resources</a></li>
+<li><a href="/java/java_discussion.htm">Java - Discussion</a></li>
+<li><a href="/javaexamples/index.htm">Java - Examples</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Java - Basic Syntax</h1>
+<div class="topgooglead">
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/java/java_environment_setup.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/java/java_object_classes.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>When we consider a Java program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what do class, object, methods, and instance variables mean.</p>
+<ul class="list">
+<li><p><b>Object</b> &minus; Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.</p></li>
+<li><p><b>Class</b> &minus; A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.</p></li>
+<li><p><b>Methods</b> &minus; A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.</p></li>
+<li><p><b>Instance Variables</b> &minus; Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.</p></li>
+</ul>
+<h2>First Java Program</h2>
+<p>Let us look at a simple code that will print the words <b><i>Hello World</i></b>.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit">
+public class MyFirstJavaProgram {
+
+   /* This is my first java program.
+    * This will print 'Hello World' as the output
+    */
+
+   public static void main(String []args) {
+      System.out.println("Hello World"); // prints Hello World
+   }
+}
+</pre>
+<p>Let's look at how to save the file, compile, and run the program. Please follow the subsequent steps &minus;</p>
+<ul class="list">
+<li><p>Open notepad and add the code as above.</p></li>
+<li><p>Save the file as: MyFirstJavaProgram.java.</p></li>
+<li><p>Open a command prompt window and go to the directory where you saved the 	class. Assume it's C:\.</p></li>
+<li><p>Type 'javac MyFirstJavaProgram.java' and press enter to compile your code. If there are no errors in your code, the command prompt will take you to the next line (Assumption : The path variable is set).</p></li>
+<li><p>Now, type ' java MyFirstJavaProgram ' to run your program.</p></li>	
+<li><p>You will be able to see ' Hello World ' printed on the window.</p></li>
+</ul>
+<h3>Output</h3>
+<pre class="result notranslate">
+C:\&gt; javac MyFirstJavaProgram.java
+C:\&gt; java MyFirstJavaProgram 
+Hello World
+</pre>
+<h2>Basic Syntax</h2>
+<p>About Java programs, it is very important to keep in mind the following points.</p>
+<ul class="list">
+<li><p><b>Case Sensitivity</b> &minus; Java is case sensitive, which means identifier <b>Hello</b> and <b>hello</b> would have different meaning in Java.</p></li>
+<li><p><b>Class Names</b> &minus; For all class names the first letter should be in Upper Case. If several words are used to form a name of the class, each inner word's first letter should be in Upper Case.</p>
+<p><b>Example:</b> <i>class MyFirstJavaClass</i></p></li>
+<li><p><b>Method Names</b> &minus; All method names should start with a Lower Case letter. If several words are  used to form the name of the method, then each inner word's first letter should be in Upper Case.</p>
+<p><b>Example:</b> <i>public void myMethodName()</i></p></li>
+<li><p><b>Program File Name</b> &minus; Name of the program file should exactly match the class name.</p>
+<p>When saving the file, you should save it using the class name (Remember Java is case sensitive) and append '.java' to the end of the name (if the file name and the class name do not match, your program will not compile).</p>
+<p><b>Example:</b> Assume 'MyFirstJavaProgram' is the class name. Then the file should be saved as <i>'MyFirstJavaProgram.java'</i></p></li>
+<li><p><b>public static void main(String args[])</b> &minus; Java program processing starts from the main() method which is a mandatory part of every Java program.</p></li>
+</ul>
+<h2>Java Identifiers</h2>
+<p>All Java components require names. Names used for classes, variables, and methods are called <b>identifiers</b>.</p>
+<p>In Java, there are several points to remember about identifiers. They are as follows &minus;</p>
+<ul class="list">
+<li><p>All identifiers should begin with a letter (A to Z or a to z), currency character ($) or an underscore (_).</p></li>
+<li><p>After the first character, identifiers can have any combination of characters.</p></li>
+<li><p>A key word cannot be used as an identifier.</p></li>
+<li><p>Most importantly, identifiers are case sensitive.</p></li>
+<li><p>Examples of legal identifiers: age, $salary, _value, __1_value.</p></li>
+<li><p>Examples of illegal identifiers: 123abc, -salary.</p></li>
+</ul>
+<h2>Java Modifiers</h2>
+<p>Like other languages, it is possible to modify classes, methods, etc., by using modifiers. There are two categories of modifiers &minus;</p>
+<ul class="list">
+<li><p><b>Access Modifiers</b> &minus; default, public , protected, private</p></li>
+<li><p><b>Non-access Modifiers</b> &minus; final, abstract, strictfp</p></li>
+</ul>
+<p>We will be looking into more details about modifiers in the next section.</p>
+<h2>Java Variables</h2>
+<p>Following are the types of variables in Java &minus;</p>
+<ul class="list">
+<li>Local Variables</li>
+<li>Class Variables (Static Variables)</li>
+<li>Instance Variables (Non-static Variables)</li>
+</ul>
+<h2>Java Arrays</h2>
+<p>Arrays are objects that store multiple variables of the same type. However, an array itself is an object on the heap. We will look into how to declare, construct, and initialize in the upcoming chapters.</p>
+<h2>Java Enums</h2>
+<p>Enums were introduced in Java 5.0. Enums restrict a variable to have one of only a few predefined values. The values in this enumerated list are called enums.</p>
+<p>With the use of enums it is possible to reduce the number of bugs in your code.</p>
+<p>For example, if we consider an application for a fresh juice shop, it would be possible to restrict the glass size to small, medium, and large. This would make sure that it would not allow anyone to order any size other than small, medium, or large.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit">
+class FreshJuice {
+   enum FreshJuiceSize{ SMALL, MEDIUM, LARGE }
+   FreshJuiceSize size;
+}
+
+public class FreshJuiceTest {
+
+   public static void main(String args[]) {
+      FreshJuice juice = new FreshJuice();
+      juice.size = FreshJuice.FreshJuiceSize.MEDIUM ;
+      System.out.println("Size: " + juice.size);
+   }
+}
+</pre>
+<p>The above example will produce the following result &minus;</p>
+<h3>Output</h3>
+<pre class="result notranslate">
+Size: MEDIUM
+</pre>
+<p><b>Note</b> &minus; Enums can be declared as their own or inside a class. Methods, variables, constructors can be defined inside enums as well.</p>
+<h2>Java Keywords</h2>
+<p>The following list shows the reserved words in Java. These reserved words may not be used as constant or variable or any other identifier names.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<td>abstract</td>
+<td>assert</td>
+<td>boolean</td>
+<td>break</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>case</td>
+<td>catch</td>
+<td>char</td>
+</tr>
+<tr>
+<td>class</td>
+<td>const</td>
+<td>continue</td>
+<td>default</td>
+</tr>
+<tr>
+<td>do</td>
+<td>double</td>
+<td>else</td>
+<td>enum</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>final</td>
+<td>finally</td>
+<td>float</td>
+</tr>
+<tr>
+<td>for</td>
+<td>goto</td>
+<td>if</td>
+<td>implements</td>
+</tr>
+<tr>
+<td>import</td>
+<td>instanceof</td>
+<td>int</td>
+<td>interface</td>
+</tr>
+<tr>
+<td>long</td>
+<td>native</td>
+<td>new</td>
+<td>package</td>
+</tr>
+<tr>
+<td>private</td>
+<td>protected</td>
+<td>public</td>
+<td>return</td>
+</tr>
+<tr>
+<td>short</td>
+<td>static</td>
+<td>strictfp</td>
+<td>super</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>synchronized</td>
+<td>this</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>throws</td>
+<td>transient</td>
+<td>try</td>
+<td>void</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>while</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<h2>Comments in Java</h2>
+<p>Java supports single-line and multi-line comments very similar to C and C&plus;&plus;. All characters available inside any comment are ignored by Java compiler.</p>
+<h3>Example</h3>
+<pre class="prettyprint notranslate tryit">
+public class MyFirstJavaProgram {
+
+   /* This is my first java program.
+    * This will print 'Hello World' as the output
+    * This is an example of multi-line comments.
+    */
+
+   public static void main(String []args) {
+      // This is an example of single line comment
+      /* This is also an example of single line comment. */
+      System.out.println("Hello World");
+   }
+}
+</pre>
+<h3>Output</h3>
+<pre class="result notranslate">
+Hello World
+</pre>
+<h2>Using Blank Lines</h2>
+<p>A line containing only white space, possibly with a comment, is known as a blank line, and Java totally ignores it.</p>
+<h2>Inheritance</h2>
+<p>In Java, classes can be derived from classes. Basically, if you need to create a new class and here is already a class that has some of the code you require, then it is possible to derive your new class from the already existing code.</p>
+<p>This concept allows you to reuse the fields and methods of the existing class without having to rewrite the code in a new class. In this scenario, the existing class is called the <b>superclass</b> and the derived class is called the <b>subclass</b>.</p>
+<h2>Interfaces</h2>
+<p>In Java language, an interface can be defined as a contract between objects on how to communicate with each other. Interfaces play a vital role when it comes to the concept of inheritance.</p>
+<p>An interface defines the methods, a deriving class (subclass) should use. But the implementation of the methods is totally up to the subclass.</p>
+<h2>What is Next?</h2>
+<p>The next section explains about Objects and classes in Java programming. At the end of the session, you will be able to get a clear picture as to what are objects and what are classes in Java.</p>
+<hr />
+<div class="pre-btn">
+<a href="/java/java_environment_setup.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="/java/java_object_classes.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'http://www.tutorialspoint.com/java/java_basic_syntax.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'http://www.tutorialspoint.com/java/java_basic_syntax.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'http://www.tutorialspoint.com/java/java_basic_syntax.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=http://www.tutorialspoint.com/java/java_basic_syntax.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/java/java_basic_syntax.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=http://www.tutorialspoint.com/java/java_basic_syntax.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="/images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="/scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="/about/faq.htm">FAQ's</a></li>
+         <li><a href="/about/about_helping.htm">Helping</a></li>
+         <li><a href="/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2017. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="/theme/js/custom-min.js?v=4"></script>
+<script src="https://www.google-analytics.com/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script type="text/javascript" src="/theme/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+   var tryit = new $.TryIt('java/try_java.php');
+   tryit.compile();
+</script></div>
+</body>
+</html>

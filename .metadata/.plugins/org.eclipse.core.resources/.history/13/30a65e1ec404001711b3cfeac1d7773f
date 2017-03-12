@@ -1,0 +1,26 @@
+package HtmlParserApp;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class SearchHelper {
+
+	public String userInput;
+	
+	public void ReadUserInput(){
+		System.out.println("Cauta: ");
+		userInput = System.in.toString();
+	}
+	
+	public void BooleanSearch(){
+		ReadUserInput();
+		try{
+			FileReader fileReader = new FileReader("invertedIndex.txt");
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+		}
+		catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+		
+	}
+}
