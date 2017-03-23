@@ -1,0 +1,10 @@
+package HtmlParserApp;
+
+public class Porter {
+	
+	public String NormalForm(string worldToConvert){
+		String result = "";
+		return result;
+	}
+
+}

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +22,7 @@ public class Helper {
 	
 	public Map<String, Integer> myDictionary = new HashMap<String, Integer>();
 	
-	public Map<String, String> myInvertedIndexMap = new HashMap<String, String>();
+	public Map<String, List<MapHelper>> myInvertedIndexMap = new HashMap<String, List<MapHelper>>();
 	
 	public void SetStopWordsList(){
 		try {
@@ -39,9 +38,10 @@ public class Helper {
 			e.printStackTrace();
 		}
 	}
+	
 	public void SetExceptionWordsList(){
 		try {
-			File file = new File("stopWords.txt");
+			File file = new File("exceptionWords.txt");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			String line;
@@ -100,7 +100,6 @@ public class Helper {
 			}
 		}
 	}
-
 	
 	public List<File> GetAllFilesFromDirectory(String path, String arg1, String arg2){
 		List<File> files = new ArrayList<File>();
@@ -130,88 +129,48 @@ public class Helper {
 	public void WriteIndexer(File input){
 		try{
 			ObjectMapper mapper = new ObjectMapper();
-			mapper.writerWithDefaultPrettyPrinter().writeValue(new File("directIndex/" + input.getName() + ".json"), myDictionary);
-			
-//		    PrintWriter writer = new PrintWriter("directIndex/" + input.getName()+".txt", "UTF-8");
-//		    for(Map.Entry<String, Integer> item: myDictionary.entrySet()) {
-//		        writer.println(item.getKey() + " " + item.getValue());
-//		    }
-//		    writer.close();
+			mapper.writerWithDefaultPrettyPrinter().writeValue(new File("directIndex/" + input.getName() + ".json"), myDictionary);			
 		} catch (IOException e) {
 		   e.printStackTrace();
 		}
 	}
 	
 	public void InvertedIndex(List<File> fileList){
-		List<Map<String, String>> invertedIndexes = new ArrayList<Map<String, String>>();
-		Map<String, String> tempMap = new HashMap<String, String>();
-		
-		StringBuilder temp = new StringBuilder();
+		Map<String, Integer> tempMap = new HashMap<String, Integer>();		
 		
 		for (File file : fileList) {
+			
 			tempMap = MapIndexFile(file);
-			invertedIndexes.add(tempMap);
-		}
-		
-		for (Map<String, String> map : invertedIndexes){
-			for(Map.Entry<String, String> entry : map.entrySet()){
-				if(myInvertedIndexMap.containsKey(entry.getKey()))
-				{
-					temp.append(myInvertedIndexMap.get(entry.getKey()));
-					temp.append("\t");
-					myInvertedIndexMap.put(entry.getKey(), temp.append(entry.getValue()).toString());
-					temp.replace(0, temp.length(), "");
+			
+			for(Map.Entry<String, Integer> entry : tempMap.entrySet()){
+				
+				List<MapHelper> lmh = new ArrayList<MapHelper>();
+				MapHelper mh = new MapHelper(file, entry.getValue());
+				
+				if(myInvertedIndexMap.containsKey(entry.getKey())){
+					lmh = myInvertedIndexMap.get(entry.getKey());
 				}
-				else{
-					myInvertedIndexMap.put(entry.getKey(), entry.getValue());
-				}
+				
+				lmh.add(mh);
+				myInvertedIndexMap.put(entry.getKey(), lmh);				
 			}
+			
 		}
 		
 		try{
-		    PrintWriter invertedIndexWriter = new PrintWriter("invertedIndex.txt", "UTF-8");
-		    PrintWriter mapIndexWriter = new PrintWriter("mapIndex.txt", "UTF-8");
-		    for(Map.Entry<String, String> item: myInvertedIndexMap.entrySet()) {
-		    	invertedIndexWriter.println(item.getKey() + "\t" + item.getValue());
-		    	mapIndexWriter.println(item.getKey() + "\tinvertedIndex.txt");
-		    }
-		    invertedIndexWriter.close();
-		    mapIndexWriter.close();
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.writerWithDefaultPrettyPrinter().writeValue(new File("invertedIndex.json"), myInvertedIndexMap);
 		} catch (IOException e) {
-		   // do something
+		   e.printStackTrace();
 		}
 	}
 	
-	public Map<String, String> MapIndexFile(File file){
-		Map<String, String> indexMap = new HashMap<String, String>();
-		ObjectMapper mapper = new ObjectMapper();		
+	public Map<String, Integer> MapIndexFile(File file){
+		Map<String, Integer> indexMap = new HashMap<String, Integer>();
+		ObjectMapper mapper = new ObjectMapper();	
+		
 		try{
-			indexMap = mapper.readValue(file, new TypeReference<HashMap<String,Object>>() {});
-//			FileReader fileReader = new FileReader(file);
-//			BufferedReader bufferedReader = new BufferedReader(fileReader);
-//			StringBuilder word1 = new StringBuilder();
-//			StringBuilder word2 = new StringBuilder();
-//			int character;
-//			while ((character = bufferedReader.read()) != -1) {
-//				char c = (char)character;
-//				if(Character.isLetter(c)){
-//					word1.append(c);
-//					continue;
-//				}
-//				if(Character.isDigit(c)){
-//					word2.append(c);
-//					continue;
-//				}
-//				if(c==' '){
-//					continue;
-//				}
-//				if(c == '\n'){
-//					indexMap.put(word1.toString(), file.getName() + " " + word2);
-//					word1.replace(0, word1.length(), "");
-//					word2.replace(0, word2.length(), "");
-//				}
-//			}
-//			fileReader.close();
+			indexMap = mapper.readValue(file, new TypeReference<HashMap<String, Integer>>() {});
 		}
 		catch(IOException e){
 			e.printStackTrace();

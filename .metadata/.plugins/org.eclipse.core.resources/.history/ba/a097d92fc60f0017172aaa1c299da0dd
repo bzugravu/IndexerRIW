@@ -1,0 +1,7 @@
+package HtmlParserApp;
+
+public class WordMap {
+	public int m;
+	
+	public StringBuilder word;
+}
