@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.type.TypeReference"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="HtmlParserApp.SearchHelper"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonPropertyOrder"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
@@ -30,4 +29,8 @@
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="HtmlParserApp.Porter"/>
 <fullyQualifiedTypeName name="HtmlParserApp.WordMap"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ExecutorService"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="java.util.concurrent.BlockingQueue"/>
 </qualifiedTypeNameHistroy>

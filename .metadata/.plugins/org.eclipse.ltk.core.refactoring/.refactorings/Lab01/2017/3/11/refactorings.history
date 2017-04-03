@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename method &apos;HtmlParserApp.Helper.GetAllFiles(...)&apos; to &apos;GetAllFilesFromDirectory&apos;&#x0D;&#x0A;- Original project: &apos;Lab01&apos;&#x0D;&#x0A;- Original element: &apos;HtmlParserApp.Helper.GetAllFiles(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;HtmlParserApp.Helper.GetAllFilesFromDirectory(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;GetAllFiles&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;HtmlParserApp{Helper.java[Helper~GetAllFiles~QString;~QString;~QString;" name="GetAllFilesFromDirectory" references="true" stamp="1489343753019" version="1.0"/>
-</session>
