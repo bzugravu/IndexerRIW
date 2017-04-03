@@ -50,4 +50,16 @@ public class MapHelper {
 	public Boolean Equals(MapHelper mh){
 		return (this.file.equals(mh.file) && this.count == mh.count) ? true : false;
 	}
+	
+	@JsonIgnore
+	@Override
+	public boolean equals(Object other){
+	    if (other == null) return false;
+	    if (other == this) return true;
+	    if (!(other instanceof MapHelper))return false;
+	    MapHelper otherMyClass = (MapHelper)other;
+	    if(this.file.equals(otherMyClass.file) && this.count == otherMyClass.count)
+	    	return true;
+	    return false;
+	}
 }

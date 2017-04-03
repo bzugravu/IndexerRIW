@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -59,12 +60,30 @@ public class Main {
 		helper.InvertedIndex(indexFiles);
 		
 		SearchHelper sh = new SearchHelper();
-		sh.BooleanSearch(helper);
+//		sh.BooleanSearch(helper);
+//		
+//		System.out.println("***********************************************");
+//		for(int i=0;i<sh.resultList.size(); i++){
+//			System.out.println(sh.resultList.get(i).file);
+//		}			
+//		System.out.println("***********************************************");
 		
-		for(int i=0;i<sh.resultList.size(); i++){
-			System.out.println(sh.resultList.get(i).file);
-		}	
+		Frequency resultFrequency = new Frequency(sh, helper);
 		
+		if(resultFrequency.searchQuery.length > 1){
+		resultFrequency.DocumentFrequency();
+		resultFrequency.TermFrequency();
+		resultFrequency.SetQueryParams();
+		resultFrequency.SetDistances();
 		
+		for(Map.Entry<String, Double> entry : resultFrequency.distance.entrySet()){
+			System.out.println(entry.getKey() + " -- " + entry.getValue().toString());
+		}
+		}
+		else{
+			for(int i=0;i<sh.resultList.size(); i++){
+				System.out.println(resultFrequency.fileList.get(i).file);
+			}	
+		}
 	}
 }

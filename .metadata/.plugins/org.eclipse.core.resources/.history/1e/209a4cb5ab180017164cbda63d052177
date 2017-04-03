@@ -1,0 +1,13 @@
+package HtmlParserApp;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Frequency {
+	
+	List<MapHelper> fileList = new ArrayList<MapHelper>();
+	
+	public Frequency(SearchHelper sh, Helper h){
+		fileList = sh.BooleanSearch(h);
+	}
+}
