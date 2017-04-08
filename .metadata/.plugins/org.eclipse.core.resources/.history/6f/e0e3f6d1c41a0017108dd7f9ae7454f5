@@ -107,17 +107,17 @@ public class Frequency {
 			double idf;
 			wordIndexFiles = map.get(word);
 			
-			if(wordIndexFiles == null)
+			if(wordIndexFiles.size() == 0)
 				 idf = 0;
 			else{
-				for(MapHelper mapIndexFile : fileList){
-					if(wordIndexFiles.contains(mapIndexFile))
-						continue;
-					else
-						appearance--;
-				}
+			for(MapHelper mapIndexFile : fileList){
+				if(wordIndexFiles.contains(mapIndexFile))
+					continue;
+				else
+					appearance--;
+			}
 			
-				idf = Math.log((double)nrDoc / appearance);
+			idf = Math.log((double)nrDoc / appearance);
 			}
 			idfMap.put(word, idf);
 		}

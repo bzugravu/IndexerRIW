@@ -7,8 +7,8 @@ public class MapThread implements Runnable {
 	private Helper helper;
 	private File file;
 	
-	public MapThread(File fileName, Helper helperName){
-		this.helper = new Helper();
+	public MapThread(File fileName, Helper helperName, Porter porter){
+		this.helper = new Helper(porter);
 		this.file = fileName;
 	}
 	

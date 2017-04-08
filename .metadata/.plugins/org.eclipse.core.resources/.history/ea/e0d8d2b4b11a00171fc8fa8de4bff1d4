@@ -33,7 +33,7 @@ public class Main {
 //				helper.PopulateDictionary(input);
 //				helper.WriteIndexer(item);
 				
-				Runnable worker = new MapThread(item, helper, porter);
+				Runnable worker = new MapThread(item, helper);
 				executor.execute(worker);
 				indexFile.println(item.getPath());
 				indexFile.println(item.getName());
@@ -60,7 +60,7 @@ public class Main {
 		
 		helper.InvertedIndex(indexFiles);
 		
-		SearchHelper sh = new SearchHelper(porter);
+		SearchHelper sh = new SearchHelper();
 //		sh.BooleanSearch(helper);
 //		
 //		System.out.println("***********************************************");

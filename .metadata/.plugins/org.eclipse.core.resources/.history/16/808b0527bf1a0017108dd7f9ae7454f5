@@ -3,7 +3,6 @@ package HtmlParserApp;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,8 +62,6 @@ public class Frequency {
 			catch(IOException e){
 				e.printStackTrace();
 			}
-			//int dim = indexMap.size();
-			//Double[] wordTf = new Double[dim+nrWords];
 			
 			int wordCount = 0;
 			for(Integer value : indexMap.values()){
@@ -83,15 +80,6 @@ public class Frequency {
 				index++;
 			}
 			
-//			int wordAppearance;
-//			List<String> searchQueryList = Arrays.asList(searchQuery);
-//			for(Map.Entry<String, Integer> entry : indexMap.entrySet()){
-//				if(searchQueryList.contains(entry.getKey()))
-//					continue;
-//				wordAppearance = entry.getValue();
-//				double tempTf = (double)wordAppearance / wordCount;
-//			}
-			
 			tfMap.put(file.file, wordTf);
 		}
 		
@@ -104,21 +92,16 @@ public class Frequency {
 			//Add Threads
 			List<MapHelper> wordIndexFiles = new ArrayList<MapHelper>();
 			int appearance = nrDoc;
-			double idf;
 			wordIndexFiles = map.get(word);
 			
-			if(wordIndexFiles == null)
-				 idf = 0;
-			else{
-				for(MapHelper mapIndexFile : fileList){
-					if(wordIndexFiles.contains(mapIndexFile))
-						continue;
-					else
-						appearance--;
-				}
-			
-				idf = Math.log((double)nrDoc / appearance);
+			for(MapHelper mapIndexFile : fileList){
+				if(wordIndexFiles.contains(mapIndexFile))
+					continue;
+				else
+					appearance--;
 			}
+			
+			double idf = Math.log((double)nrDoc / appearance);
 			idfMap.put(word, idf);
 		}
 	}

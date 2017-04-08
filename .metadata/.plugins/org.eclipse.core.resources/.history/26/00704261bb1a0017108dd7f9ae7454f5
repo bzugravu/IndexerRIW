@@ -28,14 +28,10 @@ public class SearchHelper {
 		String userInputString = input.nextLine();
 		input.close();
 		userInput = userInputString.split(" ");
-		
-//		for(int i=0; i<userInput.length; i++){
-//			userInput[i] = porter.NormalForm(userInput[i]);
-//		}
-		
-//		for(int i=0; i<userInput.length; i++){
-//			System.out.println(userInput[i]);
-//		}		
+		//
+		for(String s : userInput){
+			s = porter.NormalForm(s);
+		}
 	}
 	
 	public void BooleanSearch(Helper helper){

@@ -16,26 +16,12 @@ public class SearchHelper {
 	public String[] userInput;	
 	List<MapHelper> resultList = new ArrayList<MapHelper>();
 	
-	public Porter porter;
-	
-	public SearchHelper(Porter p){
-		this.porter = p;
-	}
-	
 	public void ReadUserInput(){
 		System.out.println("Cauta: ");
 		Scanner input = new Scanner(System.in);
 		String userInputString = input.nextLine();
 		input.close();
 		userInput = userInputString.split(" ");
-		
-//		for(int i=0; i<userInput.length; i++){
-//			userInput[i] = porter.NormalForm(userInput[i]);
-//		}
-		
-//		for(int i=0; i<userInput.length; i++){
-//			System.out.println(userInput[i]);
-//		}		
 	}
 	
 	public void BooleanSearch(Helper helper){

@@ -98,17 +98,25 @@ public class Helper {
 						continue;		
 					
 //					String normalFormWord = porter.NormalForm(word.toString().toLowerCase());
-//					if(myDictionary.containsKey(normalFormWord))
-//						myDictionary.put(normalFormWord, myDictionary.get(normalFormWord) + 1);						
-//					else
+//					if(myDictionary.containsKey(normalFormWord)){
+//						//String normalFormWord = porter.NormalForm(word.toString().toLowerCase());
+//						myDictionary.put(normalFormWord, myDictionary.get(normalFormWord) + 1);
+//					}
+//						
+//					else{
+//						//String normalFormWord = porter.NormalForm(word.toString().toLowerCase());
 //						myDictionary.put(normalFormWord, 1);
+//					}
 					
-					
-					if(myDictionary.containsKey(word.toString().toLowerCase()))
-						myDictionary.put(word.toString().toLowerCase(), myDictionary.get(word.toString().toLowerCase()) + 1);											
-					else
+					if(myDictionary.containsKey(word.toString().toLowerCase())){
+						//String normalFormWord = porter.NormalForm(word.toString().toLowerCase());
+						myDictionary.put(word.toString().toLowerCase(), myDictionary.get(word.toString().toLowerCase()) + 1);
+					}
+						
+					else{
+						//String normalFormWord = porter.NormalForm(word.toString().toLowerCase());
 						myDictionary.put(word.toString().toLowerCase(), 1);
-					
+					}
 				}
 				
 				word.replace(0, word.length(), "");

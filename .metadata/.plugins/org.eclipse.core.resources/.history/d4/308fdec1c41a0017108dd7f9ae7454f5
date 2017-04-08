@@ -104,21 +104,16 @@ public class Frequency {
 			//Add Threads
 			List<MapHelper> wordIndexFiles = new ArrayList<MapHelper>();
 			int appearance = nrDoc;
-			double idf;
 			wordIndexFiles = map.get(word);
 			
-			if(wordIndexFiles == null)
-				 idf = 0;
-			else{
-				for(MapHelper mapIndexFile : fileList){
-					if(wordIndexFiles.contains(mapIndexFile))
-						continue;
-					else
-						appearance--;
-				}
-			
-				idf = Math.log((double)nrDoc / appearance);
+			for(MapHelper mapIndexFile : fileList){
+				if(wordIndexFiles.contains(mapIndexFile))
+					continue;
+				else
+					appearance--;
 			}
+			
+			double idf = Math.log((double)nrDoc / appearance);
 			idfMap.put(word, idf);
 		}
 	}

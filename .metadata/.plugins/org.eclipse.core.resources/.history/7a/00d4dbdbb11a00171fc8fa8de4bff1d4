@@ -33,7 +33,7 @@ public class Main {
 //				helper.PopulateDictionary(input);
 //				helper.WriteIndexer(item);
 				
-				Runnable worker = new MapThread(item, helper, porter);
+				Runnable worker = new MapThread(item, helper);
 				executor.execute(worker);
 				indexFile.println(item.getPath());
 				indexFile.println(item.getName());
