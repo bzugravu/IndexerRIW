@@ -1,0 +1,15 @@
+package HtmlParserApp;
+
+public class ResultDocument {
+	public String name;
+	public double distance;
+	
+	public ResultDocument(String s, double d){
+		this.name = s;
+		this.distance = d;
+	}
+	
+	public double GetDistance(){
+		return this.distance;
+	}
+}

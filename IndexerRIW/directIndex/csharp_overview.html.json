@@ -1,138 +1,502 @@
 {
-  "architectures" : 1,
-  "copyright" : 1,
-  "versioning" : 1,
-  "advanced" : 1,
-  "numerous" : 1,
-  "during" : 1,
-  "professional" : 1,
-  "number" : 1,
-  "approved" : 1,
-  "lambda" : 1,
-  "java" : 1,
-  "programmers" : 1,
-  "events" : 2,
-  "cli" : 1,
-  "closely" : 1,
-  "resemblance" : 1,
-  "is" : 9,
-  "it" : 11,
-  "being" : 1,
-  "easy" : 2,
-  "an" : 1,
-  "standards" : 1,
-  "traditional" : 1,
-  "linq" : 1,
-  "reserved" : 1,
-  "following" : 2,
-  "integration" : 1,
-  "programs" : 1,
-  "conditions" : 1,
-  "object" : 3,
-  "strong" : 3,
-  "be" : 1,
-  "association" : 1,
-  "search" : 1,
-  "advertisements" : 2,
-  "computer" : 3,
-  "library" : 1,
-  "modern" : 2,
-  "variety" : 1,
-  "by" : 3,
-  "rights" : 1,
-  "assembly" : 1,
-  "structured" : 1,
-  "a" : 7,
-  "c" : 13,
-  "languages" : 2,
-  "learn" : 1,
-  "efficient" : 1,
-  "team" : 1,
-  "delegates" : 1,
-  "executable" : 1,
-  "the" : 4,
-  "component" : 1,
-  "framework" : 2,
-  "organization" : 1,
-  "to" : 3,
-  "standard" : 1,
-  "iso" : 1,
-  "conditional" : 1,
-  "use" : 2,
-  "language" : 6,
-  "simple" : 1,
-  "used" : 1,
-  "developed" : 2,
-  "microsoft" : 1,
-  "platforms" : 2,
-  "that" : 2,
-  "features" : 3,
-  "high" : 2,
-  "his" : 1,
-  "generics" : 1,
-  "worldwide" : 1,
-  "few" : 1,
-  "multithreading" : 1,
-  "has" : 2,
-  "international" : 1,
-  "net" : 2,
-  "different" : 1,
-  "ecma" : 1,
-  "selected" : 1,
-  "programming" : 5,
-  "which" : 1,
-  "all" : 1,
-  "development" : 1,
-  "level" : 2,
-  "european" : 1,
-  "widely" : 1,
-  "runtime" : 1,
-  "garbage" : 1,
-  "collection" : 1,
-  "list" : 1,
-  "expressions" : 1,
-  "important" : 1,
-  "produces" : 1,
-  "basic" : 1,
-  "oriented" : 4,
-  "useful" : 1,
-  "code" : 1,
-  "reasons" : 1,
-  "purpose" : 2,
-  "part" : 1,
-  "for" : 1,
-  "hejlsberg" : 1,
-  "constructs" : 1,
-  "general" : 2,
-  "can" : 1,
-  "compiled" : 1,
-  "common" : 1,
-  "and" : 10,
-  "of" : 9,
-  "tutorial" : 2,
-  "designed" : 1,
-  "make" : 2,
-  "on" : 2,
-  "allows" : 1,
-  "indexers" : 1,
-  "overview" : 1,
-  "manufacturers" : 1,
-  "was" : 1,
-  "resources" : 1,
-  "reading" : 1,
-  "automatic" : 1,
-  "anders" : 1,
-  "follow" : 1,
-  "windows" : 1,
-  "with" : 2,
-  "endearing" : 1,
-  "environment" : 1,
-  "boolean" : 1,
-  "although" : 1,
-  "management" : 1,
-  "compilation" : 1,
-  "infrastructure" : 1,
-  "various" : 1,
-  "consists" : 1,
-  "properties" : 1
+  "dur" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "hi" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "runtim" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "reason" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "copyright" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "select" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "properti" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "program" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "construct" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "endear" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "consist" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "environ" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "compon" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "number" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "lambda" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "java" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "profession" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "cli" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "varieti" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "gener" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "worldwid" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "index" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "it" : {
+    "count" : 11,
+    "tf" : 0.046413502109704644
+  },
+  "automat" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "easy" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "an" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "version" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "manag" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "linq" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "architectur" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "programm" : {
+    "count" : 6,
+    "tf" : 0.02531645569620253
+  },
+  "object" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "organ" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "strong" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "be" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "librari" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "languag" : {
+    "count" : 8,
+    "tf" : 0.03375527426160337
+  },
+  "compil" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "ander" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "search" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "modern" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "by" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "event" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "close" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "deleg" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "resourc" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "variou" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "a" : {
+    "count" : 7,
+    "tf" : 0.029535864978902954
+  },
+  "c" : {
+    "count" : 13,
+    "tf" : 0.05485232067510549
+  },
+  "intern" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "learn" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "assembli" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "i" : {
+    "count" : 9,
+    "tf" : 0.0379746835443038
+  },
+  "tutori" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "tradit" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "team" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "right" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "the" : {
+    "count" : 4,
+    "tf" : 0.016877637130801686
+  },
+  "framework" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "infrastructur" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "to" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "advanc" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "garbag" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "standard" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "iso" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "featur" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "reserv" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "simple" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "express" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "microsoft" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "that" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "high" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "structur" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "few" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "net" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "ecma" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "us" : {
+    "count" : 4,
+    "tf" : 0.016877637130801686
+  },
+  "advertis" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "which" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "all" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "read" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "orient" : {
+    "count" : 4,
+    "tf" : 0.016877637130801686
+  },
+  "multithread" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "level" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "european" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "develop" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "effici" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "list" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "integr" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "basic" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "produc" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "collect" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "allow" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "code" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "import" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "part" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "for" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "wa" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "hejlsberg" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "platform" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "comput" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "can" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "execut" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "common" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "and" : {
+    "count" : 10,
+    "tf" : 0.04219409282700422
+  },
+  "of" : {
+    "count" : 9,
+    "tf" : 0.0379746835443038
+  },
+  "design" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "make" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "on" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "overview" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "purpos" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "associ" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "wide" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "manufactur" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "follow" : {
+    "count" : 3,
+    "tf" : 0.012658227848101266
+  },
+  "differ" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "resembl" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "with" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "condit" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "boolean" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "although" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "numer" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "ha" : {
+    "count" : 2,
+    "tf" : 0.008438818565400843
+  },
+  "window" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  },
+  "approv" : {
+    "count" : 1,
+    "tf" : 0.004219409282700422
+  }
 }

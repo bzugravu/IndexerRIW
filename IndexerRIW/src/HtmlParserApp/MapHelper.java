@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
 	"file",
-	"count"
+	"count",
+	"idf"
 })
 public class MapHelper {
 	@JsonProperty("file")
@@ -17,13 +18,17 @@ public class MapHelper {
 	@JsonProperty("count")
 	public int count;
 	
+	@JsonProperty("idf")
+	public double idf;
+	
 	public MapHelper(){
 		
 	}
 	
-	public MapHelper(File input, int nr){
+	public MapHelper(File input, int nr, double idf){
 		this.file = input.getName();
 		this.count = nr;
+		this.idf = idf;
 	}
 	
 	@JsonProperty("file")
@@ -44,6 +49,16 @@ public class MapHelper {
 	@JsonProperty("count")
 	public int GetCount(){
 		return this.count;
+	}
+	
+	@JsonProperty("idf")
+	public void SetIdf(double nr){
+		this.idf = nr;
+	}
+	
+	@JsonProperty("idf")
+	public double GetIdf(){
+		return this.idf;
 	}
 	
 	@JsonIgnore

@@ -1,0 +1,183 @@
+package HtmlParserApp;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Frequency {
+	
+	public List<MapHelper> fileList = new ArrayList<MapHelper>();
+	Map<String, List<MapHelper>> map = new HashMap<String, List<MapHelper>>();
+	Map<String, Double> idfMap = new HashMap<String, Double>();
+	Map<String, Double[]> tfMap = new HashMap<String, Double[]>();
+	Map<String, Double> distance = new HashMap<String, Double>();
+	public String[] searchQuery;
+	
+	Double[] query;
+	
+	public Frequency(SearchHelper sh, Helper h){
+		sh.BooleanSearch(h);
+		
+		System.out.println("***********************************************");
+		for(int i=0;i<sh.resultList.size(); i++){
+			System.out.println(sh.resultList.get(i).file);
+		}			
+		System.out.println("***********************************************");
+		
+		
+		fileList = sh.resultList;
+		searchQuery = sh.userInput;
+		InitializeMapper();
+	}
+	
+	public void InitializeMapper(){
+		ObjectMapper mapper = new ObjectMapper();
+		try{
+			map = mapper.readValue(new File("invertedIndex.json"), new TypeReference<HashMap<String, List<MapHelper>>>() {});
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	public void TermFrequency(){
+		int nrWords = searchQuery.length;
+		
+		
+		for(MapHelper file : fileList){
+			//Double[] wordTf = new Double[nrWords];
+			int index = 0;
+			//Add threads
+			Map<String, WordFrequency> indexMap = new HashMap<String, WordFrequency>();
+			ObjectMapper mapper = new ObjectMapper();	
+			
+			try{
+				indexMap = mapper.readValue(new File("directIndex/" + file.file), new TypeReference<HashMap<String, WordFrequency>>() {});
+			}
+			catch(IOException e){
+				e.printStackTrace();
+			}
+			
+			int dim = indexMap.size();
+			Double[] wordTf = new Double[dim+nrWords];
+			
+			for(String word : searchQuery){
+				double tempTF;
+				if(indexMap.containsKey(word))
+					tempTF = indexMap.get(word).tf;
+				else
+					tempTF = 0.0;
+				
+				double tempIdf = idfMap.get(word);
+				wordTf[index] = tempIdf * tempTF;
+				index++;
+			}
+			
+			List<String> tempSearchQuery = Arrays.asList(searchQuery); 
+			for(Map.Entry<String, WordFrequency> entry : indexMap.entrySet()){
+				if(tempSearchQuery.contains(entry.getKey())){
+					continue;
+				}
+				
+				double tempTF = entry.getValue().tf;
+				double tempIdf = map.get(entry.getKey()).get(0).idf;
+				wordTf[index] = tempIdf * tempTF;
+				index++;
+			}
+			
+//			int wordCount = 0;
+//			for(Integer value : indexMap.values()){
+//				wordCount += value;
+//			}
+//			
+//			for(String word : searchQuery){
+//				int wordAppearance;
+//				if(indexMap.containsKey(word))
+//					wordAppearance = indexMap.get(word);
+//				else
+//					wordAppearance = 0;
+//				double tempTf = (double)wordAppearance / wordCount;
+//				double tempIdf = idfMap.get(word);
+//				wordTf[index] = tempTf * tempIdf;
+//				index++;
+//			}
+			
+//			int wordAppearance;
+//			List<String> searchQueryList = Arrays.asList(searchQuery);
+//			for(Map.Entry<String, Integer> entry : indexMap.entrySet()){
+//				if(searchQueryList.contains(entry.getKey()))
+//					continue;
+//				wordAppearance = entry.getValue();
+//				double tempTf = (double)wordAppearance / wordCount;
+//			}
+			
+			tfMap.put(file.file, wordTf);
+		}
+		
+	}
+	
+	public void DocumentFrequency(){
+//		int nrDoc = fileList.size();
+		
+		for(String word : searchQuery){
+			//Add Threads
+			List<MapHelper> wordIndexFiles = new ArrayList<MapHelper>();
+//			int appearance = nrDoc;
+//			double idf;
+			wordIndexFiles = map.get(word);
+			
+			if(wordIndexFiles == null)
+				idfMap.put(word, 0.0);
+			else{
+//				for(MapHelper mapIndexFile : fileList){
+//					if(wordIndexFiles.contains(mapIndexFile))
+//						continue;
+//					else
+//						appearance--;
+//				}
+//			
+//				idf = Math.log((double)nrDoc / appearance);
+				idfMap.put(word, wordIndexFiles.get(0).idf);
+			}
+			
+		}
+	}
+	
+	public void SetQueryParams(){
+		int wordCount = searchQuery.length;
+		this.query = new Double[wordCount];
+		int index = 0;
+		
+		for(String word : searchQuery){
+			query[index] = ((double)1 / wordCount) * idfMap.get(word);
+			index++;
+		}
+	}
+	
+	public void SetDistances(){
+		for(Map.Entry<String, Double[]> document : tfMap.entrySet()){		
+			double vectMultiplySum = 0;
+			double moduleQuerySum = 0;
+			double moduleDocSum = 0;
+			
+			for(int i=0; i < query.length; i++){
+				vectMultiplySum += query[i] * document.getValue()[i];
+				moduleQuerySum += query[i] * query[i];
+			}
+			
+			for(int i=0; i < document.getValue().length; i++){
+				moduleDocSum += document.getValue()[i] * document.getValue()[i];
+			}
+			
+			double dist = vectMultiplySum / (Math.sqrt(moduleDocSum) * Math.sqrt(moduleQuerySum));
+			distance.put(document.getKey(), dist);
+		}
+	}
+}
+

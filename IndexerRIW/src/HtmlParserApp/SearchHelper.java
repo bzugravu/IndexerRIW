@@ -29,9 +29,9 @@ public class SearchHelper {
 		input.close();
 		userInput = userInputString.split(" ");
 		
-//		for(int i=0; i<userInput.length; i++){
-//			userInput[i] = porter.NormalForm(userInput[i]);
-//		}
+		for(int i=0; i<userInput.length; i++){
+			userInput[i] = porter.NormalForm(userInput[i]);
+		}
 		
 //		for(int i=0; i<userInput.length; i++){
 //			System.out.println(userInput[i]);
@@ -71,6 +71,7 @@ public class SearchHelper {
 						continue;
 					}						
 					if(word.startsWith("-")){
+						//userInput = ArrayUtils.removeElement(userInput, word);
 						word = word.substring(1);
 						if(entry.getKey().equals(word)){
 							currentResultList.addAll(entry.getValue());

@@ -25,11 +25,11 @@ public class Frequency {
 	public Frequency(SearchHelper sh, Helper h){
 		sh.BooleanSearch(h);
 		
-		System.out.println("***********************************************");
-		for(int i=0;i<sh.resultList.size(); i++){
-			System.out.println(sh.resultList.get(i).file);
-		}			
-		System.out.println("***********************************************");
+//		System.out.println("***********************************************");
+//		for(int i=0;i<sh.resultList.size(); i++){
+//			System.out.println(sh.resultList.get(i).file);
+//		}			
+//		System.out.println("***********************************************");
 		
 		
 		fileList = sh.resultList;
@@ -51,75 +51,61 @@ public class Frequency {
 		
 		
 		for(MapHelper file : fileList){
-			Double[] wordTf = new Double[nrWords];
 			int index = 0;
 			//Add threads
-			Map<String, Integer> indexMap = new HashMap<String, Integer>();
+			Map<String, WordFrequency> indexMap = new HashMap<String, WordFrequency>();
 			ObjectMapper mapper = new ObjectMapper();	
 			
 			try{
-				indexMap = mapper.readValue(new File("directIndex/" + file.file), new TypeReference<HashMap<String, Integer>>() {});
+				indexMap = mapper.readValue(new File("directIndex/" + file.file), new TypeReference<HashMap<String, WordFrequency>>() {});
 			}
 			catch(IOException e){
 				e.printStackTrace();
 			}
-			//int dim = indexMap.size();
-			//Double[] wordTf = new Double[dim+nrWords];
 			
-			int wordCount = 0;
-			for(Integer value : indexMap.values()){
-				wordCount += value;
-			}
+			int dim = indexMap.size();
+			Double[] wordTf = new Double[dim+nrWords];
 			
 			for(String word : searchQuery){
-				int wordAppearance;
+				double tempTF;
 				if(indexMap.containsKey(word))
-					wordAppearance = indexMap.get(word);
+					tempTF = indexMap.get(word).tf;
 				else
-					wordAppearance = 0;
-				double tempTf = (double)wordAppearance / wordCount;
+					tempTF = 0.0;
+				
 				double tempIdf = idfMap.get(word);
-				wordTf[index] = tempTf * tempIdf;
+				wordTf[index] = tempIdf * tempTF;
 				index++;
 			}
 			
-//			int wordAppearance;
-//			List<String> searchQueryList = Arrays.asList(searchQuery);
-//			for(Map.Entry<String, Integer> entry : indexMap.entrySet()){
-//				if(searchQueryList.contains(entry.getKey()))
-//					continue;
-//				wordAppearance = entry.getValue();
-//				double tempTf = (double)wordAppearance / wordCount;
-//			}
+			List<String> tempSearchQuery = Arrays.asList(searchQuery); 
+			for(Map.Entry<String, WordFrequency> entry : indexMap.entrySet()){
+				if(tempSearchQuery.contains(entry.getKey())){
+					continue;
+				}
+				
+				double tempTF = entry.getValue().tf;
+				double tempIdf = map.get(entry.getKey()).get(0).idf;
+				wordTf[index] = tempIdf * tempTF;
+				index++;
+			}
 			
 			tfMap.put(file.file, wordTf);
 		}
 		
 	}
 	
-	public void DocumentFrequency(){
-		int nrDoc = fileList.size();
-		
+	public void DocumentFrequency(){		
 		for(String word : searchQuery){
 			//Add Threads
 			List<MapHelper> wordIndexFiles = new ArrayList<MapHelper>();
-			int appearance = nrDoc;
-			double idf;
+
 			wordIndexFiles = map.get(word);
 			
 			if(wordIndexFiles == null)
-				 idf = 0;
-			else{
-				for(MapHelper mapIndexFile : fileList){
-					if(wordIndexFiles.contains(mapIndexFile))
-						continue;
-					else
-						appearance--;
-				}
-			
-				idf = Math.log((double)nrDoc / appearance);
-			}
-			idfMap.put(word, idf);
+				idfMap.put(word, 0.0);
+			else
+				idfMap.put(word, wordIndexFiles.get(0).idf);						
 		}
 	}
 	
@@ -135,20 +121,22 @@ public class Frequency {
 	}
 	
 	public void SetDistances(){
-		for(Map.Entry<String, Double[]> document : tfMap.entrySet()){
+		for(Map.Entry<String, Double[]> document : tfMap.entrySet()){		
 			double vectMultiplySum = 0;
-			double moduleDocSum = 0;
 			double moduleQuerySum = 0;
-			Double[] currentTf = document.getValue();
+			double moduleDocSum = 0;
 			
-			for(int i=0; i < currentTf.length; i++){
-				vectMultiplySum += currentTf[i] * query[i];
-				moduleDocSum += currentTf[i] * currentTf[i];
+			for(int i=0; i < query.length; i++){
+				vectMultiplySum += query[i] * document.getValue()[i];
 				moduleQuerySum += query[i] * query[i];
 			}
 			
-			double dist = vectMultiplySum / (Math.sqrt(moduleDocSum) * Math.sqrt(moduleQuerySum));
+			for(int i=0; i < document.getValue().length; i++){
+				if(document.getValue()[i] != null)
+					moduleDocSum += document.getValue()[i] * document.getValue()[i];
+			}
 			
+			double dist = vectMultiplySum / (Math.sqrt(moduleDocSum) * Math.sqrt(moduleQuerySum));
 			distance.put(document.getKey(), dist);
 		}
 	}

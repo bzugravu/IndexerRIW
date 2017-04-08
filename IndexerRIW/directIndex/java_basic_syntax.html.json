@@ -1,408 +1,1422 @@
 {
-  "reuse" : 1,
-  "saved" : 2,
-  "objects" : 6,
-  "your" : 6,
-  "salary" : 2,
-  "without" : 1,
-  "via" : 1,
-  "these" : 2,
-  "path" : 1,
-  "introduced" : 1,
-  "would" : 4,
-  "protected" : 2,
-  "assumption" : 1,
-  "you" : 8,
-  "wagging" : 1,
-  "sure" : 1,
-  "require" : 2,
-  "an" : 13,
-  "rewrite" : 1,
-  "as" : 18,
-  "at" : 3,
-  "size" : 7,
-  "reserved" : 3,
-  "transient" : 1,
-  "assigned" : 1,
-  "looking" : 1,
-  "object" : 8,
-  "be" : 16,
-  "role" : 1,
-  "chapters" : 1,
-  "comes" : 1,
-  "example" : 12,
-  "result" : 1,
-  "how" : 3,
-  "characters" : 2,
-  "bugs" : 1,
-  "search" : 1,
-  "advertisements" : 2,
-  "see" : 1,
-  "same" : 1,
-  "by" : 3,
-  "subsequent" : 1,
-  "after" : 1,
-  "behavior" : 3,
-  "a" : 32,
-  "mind" : 1,
-  "contain" : 1,
-  "set" : 2,
-  "c" : 5,
-  "abc" : 1,
-  "tail" : 1,
-  "words" : 5,
-  "possible" : 4,
-  "eating" : 1,
-  "myfirstjavaclass" : 1,
-  "the" : 66,
-  "s" : 6,
-  "underscore" : 1,
-  "throw" : 1,
-  "z" : 2,
-  "initialize" : 1,
-  "javac" : 2,
-  "communicate" : 2,
-  "keywords" : 1,
-  "myfirstjavaprogram" : 9,
-  "language" : 1,
-  "do" : 3,
-  "predefined" : 1,
-  "ignores" : 1,
-  "legal" : 1,
-  "programming" : 1,
-  "possibly" : 1,
-  "add" : 1,
-  "which" : 2,
-  "ignored" : 1,
-  "static" : 7,
-  "need" : 1,
-  "finally" : 1,
-  "its" : 2,
-  "list" : 2,
-  "take" : 1,
-  "final" : 2,
-  "useful" : 1,
-  "however" : 1,
-  "some" : 1,
-  "private" : 2,
-  "blank" : 2,
-  "session" : 1,
-  "for" : 5,
-  "medium" : 5,
-  "interface" : 3,
-  "directory" : 1,
-  "states" : 2,
-  "end" : 2,
-  "tutorial" : 1,
-  "compiler" : 1,
-  "lines" : 1,
-  "class" : 29,
-  "go" : 1,
-  "multiple" : 1,
-  "breed" : 1,
-  "instanceof" : 1,
-  "args" : 4,
-  "with" : 5,
-  "modify" : 1,
-  "existing" : 3,
-  "print" : 3,
-  "form" : 2,
-  "there" : 3,
-  "syntax" : 2,
-  "well" : 2,
-  "fresh" : 1,
-  "prompt" : 2,
-  "append" : 1,
-  "age" : 1,
-  "upcoming" : 1,
-  "very" : 2,
-  "copyright" : 1,
-  "called" : 4,
-  "advanced" : 1,
-  "construct" : 1,
-  "output" : 5,
-  "number" : 1,
-  "else" : 1,
-  "if" : 7,
-  "order" : 1,
-  "reduce" : 1,
-  "similar" : 1,
-  "large" : 3,
-  "in" : 22,
-  "byte" : 1,
-  "lower" : 1,
-  "is" : 26,
-  "it" : 12,
-  "sensitive" : 3,
-  "enum" : 2,
-  "printed" : 1,
-  "system" : 3,
-  "hello" : 11,
-  "arrays" : 2,
-  "dog" : 1,
-  "begin" : 1,
-  "template" : 1,
-  "other" : 5,
-  "freshjuicetest" : 1,
-  "save" : 3,
-  "restrict" : 2,
-  "mandatory" : 1,
-  "local" : 1,
-  "world" : 9,
-  "file" : 7,
-  "goto" : 1,
-  "known" : 1,
-  "native" : 1,
-  "rights" : 1,
-  "have" : 4,
-  "may" : 1,
-  "break" : 1,
-  "identifiers" : 8,
-  "produce" : 1,
-  "picture" : 1,
-  "names" : 7,
-  "deriving" : 1,
-  "able" : 2,
-  "return" : 1,
-  "synchronized" : 1,
-  "instance" : 6,
-  "constant" : 1,
-  "use" : 2,
-  "notepad" : 1,
-  "several" : 3,
-  "inheritance" : 2,
-  "main" : 5,
-  "while" : 1,
-  "points" : 2,
-  "that" : 7,
-  "etc" : 1,
-  "than" : 1,
-  "different" : 1,
-  "selected" : 1,
-  "all" : 7,
-  "new" : 5,
-  "void" : 6,
-  "already" : 2,
-  "follows" : 1,
-  "my" : 2,
-  "throws" : 1,
-  "steps" : 1,
-  "were" : 1,
-  "try" : 1,
-  "oriented" : 1,
-  "basic" : 2,
-  "errors" : 1,
-  "no" : 1,
-  "code" : 8,
-  "switch" : 1,
-  "println" : 3,
-  "and" : 21,
-  "of" : 26,
-  "heap" : 1,
-  "make" : 1,
-  "on" : 3,
-  "declared" : 1,
-  "allows" : 1,
-  "or" : 6,
-  "comments" : 3,
-  "exactly" : 1,
-  "any" : 4,
-  "super" : 1,
-  "application" : 1,
-  "upper" : 3,
-  "about" : 4,
-  "barking" : 1,
-  "defines" : 1,
-  "character" : 2,
-  "java" : 41,
-  "meaning" : 1,
-  "above" : 2,
-  "let" : 3,
-  "state" : 2,
-  "press" : 1,
-  "manipulated" : 1,
-  "defined" : 4,
-  "they" : 1,
-  "using" : 3,
-  "containing" : 1,
-  "then" : 3,
-  "each" : 5,
-  "freshjuicesize" : 3,
-  "unique" : 1,
-  "letter" : 5,
-  "mymethodname" : 1,
-  "processing" : 1,
-  "programs" : 1,
-  "actions" : 1,
-  "logics" : 1,
-  "components" : 1,
-  "access" : 2,
-  "executed" : 1,
-  "two" : 1,
-  "long" : 1,
-  "remember" : 2,
-  "into" : 3,
-  "enums" : 7,
-  "default" : 2,
-  "are" : 16,
-  "scenario" : 1,
-  "supports" : 2,
-  "where" : 2,
-  "currency" : 1,
-  "key" : 1,
-  "variables" : 14,
-  "languages" : 1,
-  "one" : 1,
-  "store" : 1,
-  "many" : 1,
-  "describes" : 1,
-  "single" : 3,
-  "such" : 1,
-  "freshjuice" : 4,
-  "to" : 31,
-  "open" : 2,
-  "but" : 1,
-  "declare" : 1,
-  "importantly" : 1,
-  "available" : 1,
-  "run" : 2,
-  "inside" : 3,
-  "compile" : 3,
-  "white" : 1,
-  "continue" : 1,
-  "basically" : 2,
-  "details" : 1,
-  "has" : 3,
-  "written" : 1,
-  "up" : 1,
-  "starts" : 1,
-  "us" : 2,
-  "glass" : 1,
-  "this" : 12,
-  "please" : 1,
-  "collection" : 1,
-  "look" : 4,
-  "constructors" : 1,
-  "extends" : 1,
-  "name" : 11,
-  "assume" : 2,
-  "fields" : 1,
-  "vital" : 1,
-  "next" : 4,
-  "allow" : 1,
-  "implements" : 1,
-  "shop" : 1,
-  "color" : 1,
-  "string" : 4,
-  "const" : 1,
-  "import" : 1,
-  "invoking" : 1,
-  "classes" : 6,
-  "concept" : 2,
-  "modifiers" : 6,
-  "non" : 2,
-  "we" : 4,
-  "not" : 4,
-  "now" : 2,
-  "every" : 1,
-  "derived" : 2,
-  "types" : 1,
-  "interfaces" : 2,
-  "start" : 1,
-  "reading" : 1,
-  "volatile" : 1,
-  "prints" : 1,
-  "what" : 4,
-  "short" : 1,
-  "comment" : 4,
-  "window" : 2,
-  "play" : 1,
-  "program" : 11,
-  "type" : 4,
-  "when" : 3,
-  "multi" : 2,
-  "superclass" : 1,
-  "enter" : 1,
-  "catch" : 1,
-  "case" : 9,
-  "between" : 1,
-  "identifier" : 3,
-  "having" : 1,
-  "method" : 5,
-  "briefly" : 1,
-  "double" : 1,
-  "contract" : 1,
-  "saving" : 1,
-  "itself" : 1,
-  "examples" : 2,
-  "anyone" : 1,
-  "following" : 4,
-  "sensitivity" : 1,
-  "word" : 3,
-  "methods" : 11,
-  "derive" : 1,
-  "out" : 3,
-  "assert" : 1,
-  "get" : 1,
-  "categories" : 1,
-  "explains" : 1,
-  "means" : 1,
-  "more" : 1,
-  "abstract" : 2,
-  "juice" : 4,
-  "char" : 1,
-  "subclass" : 3,
-  "cannot" : 1,
-  "first" : 7,
-  "small" : 3,
-  "data" : 1,
-  "own" : 1,
-  "simple" : 1,
-  "section" : 2,
-  "used" : 5,
-  "float" : 1,
-  "space" : 1,
-  "shows" : 1,
-  "should" : 9,
-  "only" : 2,
-  "few" : 1,
-  "create" : 1,
-  "from" : 3,
-  "consider" : 2,
-  "totally" : 2,
-  "combination" : 1,
-  "enumerated" : 1,
-  "package" : 1,
-  "like" : 1,
-  "behaviors" : 1,
-  "created" : 1,
-  "strictfp" : 2,
-  "inner" : 2,
-  "illegal" : 1,
-  "blueprint" : 1,
-  "important" : 1,
-  "most" : 1,
-  "keep" : 1,
-  "here" : 1,
-  "note" : 1,
-  "line" : 8,
-  "values" : 3,
-  "part" : 1,
-  "their" : 2,
-  "can" : 8,
-  "public" : 10,
-  "array" : 1,
-  "value" : 2,
-  "will" : 10,
-  "implementation" : 1,
-  "match" : 2,
-  "clear" : 1,
-  "resources" : 1,
-  "also" : 1,
-  "follow" : 1,
-  "command" : 2,
-  "int" : 1,
-  "boolean" : 1,
-  "mean" : 1,
-  "variable" : 3
+  "reuse" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "upper" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "about" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "your" : {
+    "count" : 6,
+    "tf" : 0.0047430830039525695
+  },
+  "without" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "via" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "these" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "describ" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "path" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "compon" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "java" : {
+    "count" : 41,
+    "tf" : 0.03241106719367589
+  },
+  "would" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "let" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "state" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "press" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "you" : {
+    "count" : 8,
+    "tf" : 0.006324110671936759
+  },
+  "they" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "sure" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "ag" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "then" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "an" : {
+    "count" : 13,
+    "tf" : 0.010276679841897233
+  },
+  "each" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "str" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "extend" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "ar" : {
+    "count" : 16,
+    "tf" : 0.012648221343873518
+  },
+  "at" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "predefin" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "size" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "nativ" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "transient" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "letter" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "declar" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "detail" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "programm" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "object" : {
+    "count" : 14,
+    "tf" : 0.011067193675889328
+  },
+  "chapter" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "volatil" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "be" : {
+    "count" : 16,
+    "tf" : 0.012648221343873518
+  },
+  "currenc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "access" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "role" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "languag" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "two" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "long" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "result" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "into" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "how" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "search" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "see" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "default" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "same" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "scenario" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "by" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "arg" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "defin" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "where" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "after" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "behavior" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "key" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "resourc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "a" : {
+    "count" : 50,
+    "tf" : 0.039525691699604744
+  },
+  "mind" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "contain" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "set" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "c" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "abc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "tail" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "i" : {
+    "count" : 26,
+    "tf" : 0.020553359683794466
+  },
+  "abl" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "store" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "right" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "myfirstjavaclass" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "possibli" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "the" : {
+    "count" : 66,
+    "tf" : 0.05217391304347826
+  },
+  "call" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "single" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "such" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "insid" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "thi" : {
+    "count" : 12,
+    "tf" : 0.009486166007905139
+  },
+  "u" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "bug" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "throw" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "invok" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "z" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "to" : {
+    "count" : 31,
+    "tf" : 0.02450592885375494
+  },
+  "mani" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "salari" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "open" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "but" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "javac" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "reserv" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "myfirstjavaprogram" : {
+    "count" : 9,
+    "tf" : 0.0071146245059288534
+  },
+  "run" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "do" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "white" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "sever" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "bark" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "subsequ" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "assumpt" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "legal" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "implement" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "written" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "up" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "keyword" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "hav" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "us" : {
+    "count" : 11,
+    "tf" : 0.008695652173913044
+  },
+  "advertis" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "add" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "which" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "initi" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "glass" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "static" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "synchroniz" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "constructor" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "please" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "reduc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "list" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "look" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "els" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "take" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "introduc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "privat" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "importantli" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "name" : {
+    "count" : 18,
+    "tf" : 0.014229249011857707
+  },
+  "final" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "enumerat" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "vital" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "support" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "next" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "allow" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "some" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "shop" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "blank" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "color" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "import" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "const" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "session" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "concept" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "for" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "show" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "medium" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "non" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "everi" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "we" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "not" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "now" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "combin" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "end" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "class" : {
+    "count" : 35,
+    "tf" : 0.02766798418972332
+  },
+  "bree" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "modifi" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "go" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "start" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "howev" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "instanceof" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "with" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "print" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "what" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "form" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "there" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "inherit" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "syntax" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "ha" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "well" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "short" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "step" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "comment" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "window" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "fresh" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "prompt" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "directori" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "append" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "assign" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "play" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "explain" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "sensit" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "copyright" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "select" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "program" : {
+    "count" : 12,
+    "tf" : 0.009486166007905139
+  },
+  "construct" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "ignor" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "type" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "when" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "multi" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "output" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "veri" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "number" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "variabl" : {
+    "count" : 17,
+    "tf" : 0.013438735177865613
+  },
+  "identifi" : {
+    "count" : 11,
+    "tf" : 0.008695652173913044
+  },
+  "superclass" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "action" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "enter" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "catch" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "wagg" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "if" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "case" : {
+    "count" : 9,
+    "tf" : 0.0071146245059288534
+  },
+  "between" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "order" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "creat" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "applic" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "similar" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "multipl" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "method" : {
+    "count" : 16,
+    "tf" : 0.012648221343873518
+  },
+  "large" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "in" : {
+    "count" : 22,
+    "tf" : 0.017391304347826087
+  },
+  "byte" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "double" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "lower" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "contract" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "come" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "it" : {
+    "count" : 14,
+    "tf" : 0.011067193675889328
+  },
+  "enum" : {
+    "count" : 9,
+    "tf" : 0.0071146245059288534
+  },
+  "exist" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "itself" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "consid" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "system" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "field" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "hello" : {
+    "count" : 11,
+    "tf" : 0.008695652173913044
+  },
+  "dog" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "word" : {
+    "count" : 8,
+    "tf" : 0.006324110671936759
+  },
+  "begin" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "anyon" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "other" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "valu" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "freshjuicetest" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "save" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "mymethodnam" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "requir" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "restrict" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "compil" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "local" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "deriv" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "out" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "pictur" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "world" : {
+    "count" : 9,
+    "tf" : 0.0071146245059288534
+  },
+  "file" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "goto" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "interfac" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "known" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "assum" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "assert" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "get" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "have" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "eat" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "protect" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "freshjuic" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "packag" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "mandatori" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "avail" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "may" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "break" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "more" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "tutori" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "abstract" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "juice" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "charact" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "char" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "subclass" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "exampl" : {
+    "count" : 14,
+    "tf" : 0.011067193675889328
+  },
+  "cannot" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "logic" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "manipulat" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "advanc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "instanc" : {
+    "count" : 6,
+    "tf" : 0.0047430830039525695
+  },
+  "first" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "return" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "small" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "constant" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "data" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "own" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "notepad" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "simple" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "main" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "section" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "float" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "while" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "space" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "nee" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "that" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "etc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "than" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "should" : {
+    "count" : 9,
+    "tf" : 0.0071146245059288534
+  },
+  "only" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "few" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "create" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "commun" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "from" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "exactli" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "all" : {
+    "count" : 7,
+    "tf" : 0.005533596837944664
+  },
+  "new" : {
+    "count" : 5,
+    "tf" : 0.003952569169960474
+  },
+  "read" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "void" : {
+    "count" : 6,
+    "tf" : 0.0047430830039525695
+  },
+  "upcom" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "orient" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "like" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "rememb" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "templat" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "strictfp" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "my" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "inner" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "blueprint" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "uniqu" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "most" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "alreadi" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "were" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "rewrit" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "keep" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "try" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "basic" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "produc" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "collect" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "here" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "no" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "note" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "code" : {
+    "count" : 8,
+    "tf" : 0.006324110671936759
+  },
+  "line" : {
+    "count" : 9,
+    "tf" : 0.0071146245059288534
+  },
+  "part" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "underscor" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "freshjuices" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "their" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "continu" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "error" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "point" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "switch" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "can" : {
+    "count" : 8,
+    "tf" : 0.006324110671936759
+  },
+  "println" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "total" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "execut" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "public" : {
+    "count" : 10,
+    "tf" : 0.007905138339920948
+  },
+  "briefli" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "array" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "and" : {
+    "count" : 21,
+    "tf" : 0.016600790513833993
+  },
+  "of" : {
+    "count" : 26,
+    "tf" : 0.020553359683794466
+  },
+  "possibl" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "heap" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "make" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "on" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "process" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "or" : {
+    "count" : 6,
+    "tf" : 0.0047430830039525695
+  },
+  "will" : {
+    "count" : 10,
+    "tf" : 0.007905138339920948
+  },
+  "abov" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "match" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "clear" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "sav" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  },
+  "also" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "follow" : {
+    "count" : 6,
+    "tf" : 0.0047430830039525695
+  },
+  "categori" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "any" : {
+    "count" : 4,
+    "tf" : 0.0031620553359683794
+  },
+  "command" : {
+    "count" : 2,
+    "tf" : 0.0015810276679841897
+  },
+  "differ" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "int" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "super" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "illeg" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "boolean" : {
+    "count" : 1,
+    "tf" : 7.905138339920949E-4
+  },
+  "mean" : {
+    "count" : 3,
+    "tf" : 0.0023715415019762848
+  }
 }

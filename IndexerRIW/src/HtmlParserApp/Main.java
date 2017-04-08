@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
@@ -26,13 +27,9 @@ public class Main {
 		htmlFiles = helper.GetAllFilesFromDirectory("/D:/workspace/RIW/WorkingDirectory", ".htm", ".html");
 		
 		for(File item : htmlFiles){
-			System.out.println(item.getName());
+//			System.out.println(item.getName());
 //			System.out.println(" Path:"+ item.getPath());
-			try{
-//				File input = new File(item.getPath());			
-//				helper.PopulateDictionary(input);
-//				helper.WriteIndexer(item);
-				
+			try{				
 				Runnable worker = new MapThread(item, helper, porter);
 				executor.execute(worker);
 				indexFile.println(item.getPath());
@@ -42,49 +39,41 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
-		
-		
+				
 		executor.shutdown();
-        while (!executor.isTerminated()) {
-        	
-        }
-        
+        while (!executor.isTerminated()) {        	
+        }        
         
 		indexFile.close();
 		
 		List<File> indexFiles = new ArrayList<File>();
 		indexFiles = helper.GetAllFilesFromDirectory("/D:/workspace/RIW/IndexerRIW", ".htm.json", ".html.json");
-		for(File item : indexFiles){
-			System.out.println(item.getName());
-		}
+//		for(File item : indexFiles){
+//			System.out.println(item.getName());
+//		}
 		
 		helper.InvertedIndex(indexFiles);
 		
 		SearchHelper sh = new SearchHelper(porter);
-//		sh.BooleanSearch(helper);
-//		
-//		System.out.println("***********************************************");
-//		for(int i=0;i<sh.resultList.size(); i++){
-//			System.out.println(sh.resultList.get(i).file);
-//		}			
-//		System.out.println("***********************************************");
 		
 		Frequency resultFrequency = new Frequency(sh, helper);
 		
-		if(resultFrequency.searchQuery.length > 1){
 		resultFrequency.DocumentFrequency();
 		resultFrequency.TermFrequency();
 		resultFrequency.SetQueryParams();
 		resultFrequency.SetDistances();
 		
+		List<ResultDocument> resultSet = new ArrayList<ResultDocument>();
 		for(Map.Entry<String, Double> entry : resultFrequency.distance.entrySet()){
-			System.out.println(entry.getKey() + " -- " + entry.getValue().toString());
+			//System.out.println(entry.getKey() + " -- " + entry.getValue().toString());
+			ResultDocument rd = new ResultDocument(entry.getKey(), entry.getValue());
+			resultSet.add(rd);
 		}
-		}
-		else{
-			for(int i=0;i<sh.resultList.size(); i++){
-				System.out.println(resultFrequency.fileList.get(i).file);
-			}	
+		
+		Collections.sort(resultSet, new CustomComparator());
+		
+		for(ResultDocument rd : resultSet){
+			System.out.println(rd.name + " => " + rd.distance);
 		}
 	}
 }

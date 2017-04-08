@@ -20,7 +20,7 @@ public class Helper {
 	
 	public List<String> exceptionWords = new ArrayList<>();
 	
-	public Map<String, Integer> myDictionary = new HashMap<String, Integer>();
+	public Map<String, WordFrequency> myDictionary = new HashMap<String, WordFrequency>();
 	
 	public Map<String, List<MapHelper>> myInvertedIndexMap = new HashMap<String, List<MapHelper>>();
 	
@@ -84,6 +84,7 @@ public class Helper {
 		Document doc = htmlParser.ReadHtmlFile(input);
 		String text = htmlParser.GetText(doc);
 		StringBuilder word = new StringBuilder();
+		int wordsCount = 0;
 		for(char c : text.toCharArray()){
 			if(Character.isLetter(c)){
 				word.append(c);
@@ -97,22 +98,31 @@ public class Helper {
 					if(stopWords.contains(word.toString().toLowerCase()))
 						continue;		
 					
-//					String normalFormWord = porter.NormalForm(word.toString().toLowerCase());
-//					if(myDictionary.containsKey(normalFormWord))
-//						myDictionary.put(normalFormWord, myDictionary.get(normalFormWord) + 1);						
-//					else
-//						myDictionary.put(normalFormWord, 1);
-					
-					
-					if(myDictionary.containsKey(word.toString().toLowerCase()))
-						myDictionary.put(word.toString().toLowerCase(), myDictionary.get(word.toString().toLowerCase()) + 1);											
-					else
-						myDictionary.put(word.toString().toLowerCase(), 1);
-					
+					String wordForm = word.toString().toLowerCase();
+					wordForm = porter.NormalForm(wordForm);
+					if(!wordForm.isEmpty()){					
+						if(myDictionary.containsKey(wordForm)){
+							WordFrequency tempWF = myDictionary.get(wordForm);
+							tempWF.SetCount(tempWF.count + 1);
+							myDictionary.put(wordForm, tempWF);
+						}
+						else{
+							WordFrequency tempWF = new WordFrequency(1, 0);
+							myDictionary.put(wordForm, tempWF);
+						}	
+						
+						wordsCount++;
+					}
 				}
 				
 				word.replace(0, word.length(), "");
 			}
+		}
+		
+		for(Map.Entry<String, WordFrequency> entry : myDictionary.entrySet()){
+			WordFrequency tempWF = entry.getValue();
+			tempWF.SetTf((double) tempWF.count / wordsCount);
+			myDictionary.put(entry.getKey(), tempWF);
 		}
 	}
 	
@@ -151,16 +161,17 @@ public class Helper {
 	}
 	
 	public void InvertedIndex(List<File> fileList){
-		Map<String, Integer> tempMap = new HashMap<String, Integer>();		
+		Map<String, WordFrequency> tempMap = new HashMap<String, WordFrequency>();		
 		
 		for (File file : fileList) {
 			
 			tempMap = MapIndexFile(file);
 			
-			for(Map.Entry<String, Integer> entry : tempMap.entrySet()){
+			for(Map.Entry<String, WordFrequency> entry : tempMap.entrySet()){
 				
 				List<MapHelper> lmh = new ArrayList<MapHelper>();
-				MapHelper mh = new MapHelper(file, entry.getValue());
+				WordFrequency wf = entry.getValue();
+				MapHelper mh = new MapHelper(file, wf.count, 0);
 				
 				if(myInvertedIndexMap.containsKey(entry.getKey())){
 					lmh = myInvertedIndexMap.get(entry.getKey());
@@ -168,8 +179,16 @@ public class Helper {
 				
 				lmh.add(mh);
 				myInvertedIndexMap.put(entry.getKey(), lmh);				
+			}			
+		}
+		
+		//IDF
+		for (Map.Entry<String, List<MapHelper>> entry : myInvertedIndexMap.entrySet()){
+			for(MapHelper mh : entry.getValue()){
+				MapHelper tempMH = mh;
+				tempMH.SetIdf((double)entry.getValue().size() / fileList.size());
+				entry.getValue().set(entry.getValue().indexOf(mh), tempMH);
 			}
-			
 		}
 		
 		try{
@@ -180,12 +199,12 @@ public class Helper {
 		}
 	}
 	
-	public Map<String, Integer> MapIndexFile(File file){
-		Map<String, Integer> indexMap = new HashMap<String, Integer>();
+	public Map<String, WordFrequency> MapIndexFile(File file){
+		Map<String, WordFrequency> indexMap = new HashMap<String, WordFrequency>();
 		ObjectMapper mapper = new ObjectMapper();	
 		
 		try{
-			indexMap = mapper.readValue(file, new TypeReference<HashMap<String, Integer>>() {});
+			indexMap = mapper.readValue(file, new TypeReference<HashMap<String, WordFrequency>>() {});
 		}
 		catch(IOException e){
 			e.printStackTrace();

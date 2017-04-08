@@ -124,35 +124,45 @@ public class Porter {
 	}
 
 	public String FirstStepB(String word, WordMap wm){
-		String temp = wm.word.substring(1, wm.word.length() - 1);
-		
-		if(wm.m > 0 && word.endsWith("eed")){
-			word = word.substring(0, word.length() - 1);
+		try{
+			String temp = wm.word.substring(1, wm.word.length() - 1);
+			
+			if(wm.m > 0 && word.endsWith("eed")){
+				word = word.substring(0, word.length() - 1);
+				return word;
+			}
+			
+			if(temp.contains("V") && word.endsWith("ed")){
+				word = word.substring(0, word.length() - 2);
+				return word;
+			}
+			
+			if(temp.contains("V") && word.endsWith("ing")){
+				word = word.substring(0, word.length() - 3);
+				return word;
+			}
 			return word;
 		}
-		
-		if(temp.contains("V") && word.endsWith("ed")){
-			word = word.substring(0, word.length() - 2);
+		catch(Exception ex){
 			return word;
 		}
-		
-		if(temp.contains("V") && word.endsWith("ing")){
-			word = word.substring(0, word.length() - 3);
-			return word;
-		}
-		return word;
 	}
 	
 	public String FirstStepC(String word, WordMap wm){
-		String temp = wm.word.substring(1, wm.word.length() - 1);
-		
-		if(temp.contains("V") && word.endsWith("y")){
-			word = word.substring(0,word.length() - 1);
-			word += "i";
+		try{
+			String temp = wm.word.substring(1, wm.word.length() - 1);
+			
+			if(temp.contains("V") && word.endsWith("y")){
+				word = word.substring(0,word.length() - 1);
+				word += "i";
+				return word;
+			}
+			
 			return word;
 		}
-		
-		return word;
+		catch(Exception ex){
+			return word;
+		}
 	}
 	
 	public String SecondStep(String word){
