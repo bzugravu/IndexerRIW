@@ -30,6 +30,9 @@ public class Helper {
 		this.porter = p;
 	}
 	
+	/*
+	 * Se initializeaza lista de stop-words
+	 * */
 	public void SetStopWordsList(){
 		try {
 			File file = new File("stopWords.txt");
@@ -45,6 +48,9 @@ public class Helper {
 		}
 	}
 	
+	/*
+	 * Se initializeaza lista de exceptii
+	 * */
 	public void SetExceptionWordsList(){
 		try {
 			File file = new File("exceptionWords.txt");
@@ -78,6 +84,12 @@ public class Helper {
 		System.out.println("Text:" + text);
 	}
 	
+	/*
+	 * Se parseaza fiecare fisier caracter cu caracter.
+	 * In momentul in care s-a creat un cuvant, se verifica daca face parte din list de exceptii sau din lista de stop-words.
+	 * Daca trece de pasii anteriori, se normalizeaza cuvantul cu ajutorul algoritmului lui Porter si se adauga intr-un map care contine 
+	 * perechi cheie-valoare de tipul cuvant-numar aparitii cuvant.
+	 * */
 	public void PopulateDictionary(File input) throws IOException{
 		myDictionary.clear();
 		HtmlParser htmlParser = new HtmlParser();
@@ -126,6 +138,10 @@ public class Helper {
 		}
 	}
 	
+	/*
+	 * Metoda care returneaza toata fisierele cu o anumita extensie dintr-un anumit director.
+	 * Calea catre director si extensiile posibile se trimit ca parametri
+	 * */
 	public List<File> GetAllFilesFromDirectory(String path, String arg1, String arg2){
 		List<File> files = new ArrayList<File>();
 		List<File> directoryFiles = new ArrayList<File>();
@@ -151,6 +167,9 @@ public class Helper {
 		return files;
 	}
 	
+	/*
+	 * Dupa ce s-a creat map-ul cu lista de cuvinte dintr-un fisier se scrie pe disc un fisier care sa contina informatiile din map-ul respectiv.
+	 * */
 	public void WriteIndexer(File input){
 		try{
 			ObjectMapper mapper = new ObjectMapper();
@@ -160,6 +179,12 @@ public class Helper {
 		}
 	}
 	
+	/*
+	 * Metoda care creaza indexul invers pe baza fisierelor de index direct create anterior.
+	 * Pentru fiecare fisier de pe disc se creaza un map iar pe baza inregistrarilor din acest map temporar se scrie in alt map global,
+	 * care contine informatiile de la toate fisierele.
+	 * Dupa ce s-au parsat toate fisierele, se scrie pe disc un fisier cu continutul map-ului global.
+	 * */
 	public void InvertedIndex(List<File> fileList){
 		Map<String, WordFrequency> tempMap = new HashMap<String, WordFrequency>();		
 		
@@ -199,6 +224,11 @@ public class Helper {
 		}
 	}
 	
+	/*
+	 * Functie care citeste de pe disc un fisier si returneaza un map cu informatiile gasite in acel fisier.
+	 * Fisierul este dat ca parametru.
+	 * Fisierul de pe disc contine informatii stocate sub forma unui index direct.
+	 * */
 	public Map<String, WordFrequency> MapIndexFile(File file){
 		Map<String, WordFrequency> indexMap = new HashMap<String, WordFrequency>();
 		ObjectMapper mapper = new ObjectMapper();	

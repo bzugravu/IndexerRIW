@@ -1,0 +1,76 @@
+package HtmlParserApp;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/*
+ * Thread care calculeaza vectorul cu metrici pentru un fisier.
+ * */
+public class TermFrequencyThread implements Runnable{
+	
+	public MapHelper file;
+	public int searchQueryLength;
+	Map<String, List<MapHelper>> map;
+	String[] searchQuery;
+	Map<String, Double> idfMap;	
+	
+	public TermFrequencyThread(MapHelper file, int size, Map<String, List<MapHelper>> map, String[] query, Map<String, Double> idf){
+		this.file = file;
+		this.searchQueryLength = size;
+		this.map = map;
+		this.searchQuery = query;
+		this.idfMap = idf;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		int index = 0;
+		Map<String, WordFrequency> indexMap = new HashMap<String, WordFrequency>();
+		ObjectMapper mapper = new ObjectMapper();	
+		
+		try{
+			indexMap = mapper.readValue(new File("directIndex/" + file.file), new TypeReference<HashMap<String, WordFrequency>>() {});
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		
+		int dim = indexMap.size();
+		Double[] wordTf = new Double[dim+searchQueryLength];
+		
+		for(String word : searchQuery){
+			double tempTF;
+			if(indexMap.containsKey(word))
+				tempTF = indexMap.get(word).tf;
+			else
+				tempTF = 0.0;
+			
+			double tempIdf = idfMap.get(word);
+			wordTf[index] = tempIdf * tempTF;
+			index++;
+		}
+		
+		List<String> tempSearchQuery = Arrays.asList(searchQuery); 
+		for(Map.Entry<String, WordFrequency> entry : indexMap.entrySet()){
+			if(tempSearchQuery.contains(entry.getKey())){
+				continue;
+			}
+			
+			double tempTF = entry.getValue().tf;
+			double tempIdf = map.get(entry.getKey()).get(0).idf;
+			wordTf[index] = tempIdf * tempTF;
+			index++;
+		}
+		
+		Frequency.tfMap.put(file.file, wordTf);		
+	}
+
+}

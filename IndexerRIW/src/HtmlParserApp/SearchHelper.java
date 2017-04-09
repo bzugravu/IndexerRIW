@@ -22,6 +22,9 @@ public class SearchHelper {
 		this.porter = p;
 	}
 	
+	/*
+	 * Se citeste input-ul utilizatorului si pentru fiecare cuvant din input se aplica algoritmul Porter pentru a obtine forma canonica a acestuia.
+	 * */
 	public void ReadUserInput(){
 		System.out.println("Cauta: ");
 		Scanner input = new Scanner(System.in);
@@ -31,13 +34,12 @@ public class SearchHelper {
 		
 		for(int i=0; i<userInput.length; i++){
 			userInput[i] = porter.NormalForm(userInput[i]);
-		}
-		
-//		for(int i=0; i<userInput.length; i++){
-//			System.out.println(userInput[i]);
-//		}		
+		}	
 	}
 	
+	/*
+	 * Metoda care populeaza o lista cu documentele care indeplinesc criteriul de cautare(sa contina macat unul din cuvintele date de utilizator).
+	 * */
 	public void BooleanSearch(Helper helper){
 		ReadUserInput();
 		

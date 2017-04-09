@@ -21,14 +21,32 @@ public class Main {
 		Porter porter = new Porter();
 		Helper helper = new Helper(porter);
 		ExecutorService executor = Executors.newFixedThreadPool(5);
+		String workingPath = "";
+		String projectPath = "";
+		
+		try{
+			workingPath = args[0];			
+		}catch(Exception ex){
+//			System.out.println(ex.getStackTrace());
+//			System.out.println("Calea catre directorul de lucru nu a fost setata!");
+//			System.exit(1); 
+		}
+		
+		try{
+			projectPath = args[1];
+		}catch(Exception ex){			
+		}
+		
+		
 		helper.SetStopWordsList();
 		
 		List<File> htmlFiles = new ArrayList<File>();
-		htmlFiles = helper.GetAllFilesFromDirectory("/D:/workspace/RIW/WorkingDirectory", ".htm", ".html");
+		if(!workingPath.isEmpty())
+			htmlFiles = helper.GetAllFilesFromDirectory(workingPath, ".htm", ".html");
+		else
+			htmlFiles = helper.GetAllFilesFromDirectory("/D:/workspace/RIW/WorkingDirectory", ".htm", ".html");
 		
 		for(File item : htmlFiles){
-//			System.out.println(item.getName());
-//			System.out.println(" Path:"+ item.getPath());
 			try{				
 				Runnable worker = new MapThread(item, helper, porter);
 				executor.execute(worker);
@@ -47,10 +65,10 @@ public class Main {
 		indexFile.close();
 		
 		List<File> indexFiles = new ArrayList<File>();
-		indexFiles = helper.GetAllFilesFromDirectory("/D:/workspace/RIW/IndexerRIW", ".htm.json", ".html.json");
-//		for(File item : indexFiles){
-//			System.out.println(item.getName());
-//		}
+		if(!projectPath.isEmpty())
+			indexFiles = helper.GetAllFilesFromDirectory(projectPath, ".htm.json", ".html.json");
+		else
+			indexFiles = helper.GetAllFilesFromDirectory("/D:/workspace/RIW/IndexerRIW", ".htm.json", ".html.json");
 		
 		helper.InvertedIndex(indexFiles);
 		
@@ -65,7 +83,6 @@ public class Main {
 		
 		List<ResultDocument> resultSet = new ArrayList<ResultDocument>();
 		for(Map.Entry<String, Double> entry : resultFrequency.distance.entrySet()){
-			//System.out.println(entry.getKey() + " -- " + entry.getValue().toString());
 			ResultDocument rd = new ResultDocument(entry.getKey(), entry.getValue());
 			resultSet.add(rd);
 		}

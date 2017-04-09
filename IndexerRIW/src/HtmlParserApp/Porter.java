@@ -3,6 +3,10 @@ package HtmlParserApp;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Algoritm de aducere a unui cuvant la forma sa canonica.
+ * Se primeste ca input un cuvant si se trece prin toti pasii algoritmului, dupa care este returnata forma finala.
+ * */
 public class Porter {
 	
 	public List<Character> vowels = new ArrayList<Character>();

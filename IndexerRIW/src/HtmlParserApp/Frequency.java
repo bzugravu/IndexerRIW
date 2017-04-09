@@ -1,12 +1,13 @@
 package HtmlParserApp;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,23 +16,16 @@ public class Frequency {
 	
 	public List<MapHelper> fileList = new ArrayList<MapHelper>();
 	Map<String, List<MapHelper>> map = new HashMap<String, List<MapHelper>>();
-	Map<String, Double> idfMap = new HashMap<String, Double>();
-	Map<String, Double[]> tfMap = new HashMap<String, Double[]>();
+	//Map<String, Double> idfMap = new HashMap<String, Double>();
+	static Map<String, Double> idfMap = new ConcurrentHashMap<String, Double>();
+	//Map<String, Double[]> tfMap = new HashMap<String, Double[]>();
+	static Map<String, Double[]> tfMap = new ConcurrentHashMap<String, Double[]>();
 	Map<String, Double> distance = new HashMap<String, Double>();
-	public String[] searchQuery;
-	
+	public String[] searchQuery;	
 	Double[] query;
 	
 	public Frequency(SearchHelper sh, Helper h){
-		sh.BooleanSearch(h);
-		
-//		System.out.println("***********************************************");
-//		for(int i=0;i<sh.resultList.size(); i++){
-//			System.out.println(sh.resultList.get(i).file);
-//		}			
-//		System.out.println("***********************************************");
-		
-		
+		sh.BooleanSearch(h);		
 		fileList = sh.resultList;
 		searchQuery = sh.userInput;
 		InitializeMapper();
@@ -46,69 +40,53 @@ public class Frequency {
 		}
 	}
 	
+	/*
+	 * Functie ce populeaza un map cu elemente de tip "vector document", ce contine metrici pentru fiecare cuvant din document.
+	 * Se parseaza fiecare document, iar pentru acestea se adauga in map cate un element.
+	 * Elementul din map corespunde unui singur fisier, si contine informatii despre cuvintele prezente in fisier(tf * idf).
+	 * */
 	public void TermFrequency(){
+		ExecutorService termExecutor = Executors.newFixedThreadPool(5);
 		int nrWords = searchQuery.length;
-		
-		
+				
 		for(MapHelper file : fileList){
-			int index = 0;
-			//Add threads
-			Map<String, WordFrequency> indexMap = new HashMap<String, WordFrequency>();
-			ObjectMapper mapper = new ObjectMapper();	
-			
 			try{
-				indexMap = mapper.readValue(new File("directIndex/" + file.file), new TypeReference<HashMap<String, WordFrequency>>() {});
-			}
-			catch(IOException e){
+				Runnable worker = new TermFrequencyThread(file, nrWords, map, searchQuery, idfMap);
+				termExecutor.execute(worker);
+			}catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			int dim = indexMap.size();
-			Double[] wordTf = new Double[dim+nrWords];
-			
-			for(String word : searchQuery){
-				double tempTF;
-				if(indexMap.containsKey(word))
-					tempTF = indexMap.get(word).tf;
-				else
-					tempTF = 0.0;
-				
-				double tempIdf = idfMap.get(word);
-				wordTf[index] = tempIdf * tempTF;
-				index++;
-			}
-			
-			List<String> tempSearchQuery = Arrays.asList(searchQuery); 
-			for(Map.Entry<String, WordFrequency> entry : indexMap.entrySet()){
-				if(tempSearchQuery.contains(entry.getKey())){
-					continue;
-				}
-				
-				double tempTF = entry.getValue().tf;
-				double tempIdf = map.get(entry.getKey()).get(0).idf;
-				wordTf[index] = tempIdf * tempTF;
-				index++;
-			}
-			
-			tfMap.put(file.file, wordTf);
 		}
 		
+		termExecutor.shutdown();
+        while (!termExecutor.isTerminated()) {        	
+        } 
 	}
 	
-	public void DocumentFrequency(){		
+	/*
+	 * Functie care populeaza un map cu valoarea idf pentru fiecare cuvant din query.
+	 * Daca nu gaseste un cuvant din query in fisierul de indexare, valoarea idf a acestuia va fi 0.
+	 * */
+	public void DocumentFrequency(){	
+		ExecutorService docExecutor = Executors.newFixedThreadPool(5);
+		
 		for(String word : searchQuery){
-			//Add Threads
-			List<MapHelper> wordIndexFiles = new ArrayList<MapHelper>();
-
-			wordIndexFiles = map.get(word);
-			
-			if(wordIndexFiles == null)
-				idfMap.put(word, 0.0);
-			else
-				idfMap.put(word, wordIndexFiles.get(0).idf);						
+			try{
+				Runnable worker = new DocumentFrequencyThread(word, map);
+				docExecutor.execute(worker);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+		
+		docExecutor.shutdown();
+        while (!docExecutor.isTerminated()) {        	
+        } 
 	}
 	
+	/*
+	 * Functie care construieste vectorul corespunzator query-ului.
+	 * */
 	public void SetQueryParams(){
 		int wordCount = searchQuery.length;
 		this.query = new Double[wordCount];
@@ -120,6 +98,9 @@ public class Frequency {
 		}
 	}
 	
+	/*
+	 * Functie care calculeaza cosinusul dintre fisierele rezultate in urma cautarii booleene si vectorul corespunzator query-ului.
+	 * */
 	public void SetDistances(){
 		for(Map.Entry<String, Double[]> document : tfMap.entrySet()){		
 			double vectMultiplySum = 0;

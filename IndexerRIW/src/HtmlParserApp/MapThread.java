@@ -2,6 +2,9 @@ package HtmlParserApp;
 
 import java.io.File;
 
+/*
+ * Thread care executa operatia de indexare directa.
+ * */
 public class MapThread implements Runnable {
 
 	private Helper helper;
@@ -19,7 +22,7 @@ public class MapThread implements Runnable {
 		try{
 			helper.PopulateDictionary(input);
 			helper.WriteIndexer(file);
-			System.out.println("Thread for "+file.getName()+" has finished processing");
+			//System.out.println("Thread for "+file.getName()+" has finished processing");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
